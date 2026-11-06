@@ -1,0 +1,38 @@
+{"id": "q01", "question": "How long do customers have to request a refund?", "expected_doc": "billing-faq", "answerable": true, "type": "lookup"}
+{"id": "q02", "question": "Where can I download an invoice as a PDF?", "expected_doc": "billing-faq", "answerable": true, "type": "lookup"}
+{"id": "q03", "question": "What happens after a payment fails three times?", "expected_doc": "billing-faq", "answerable": true, "type": "lookup"}
+{"id": "q04", "question": "Why was my card charged one dollar when I changed payment method?", "expected_doc": "billing-faq", "answerable": true, "type": "lookup"}
+{"id": "q05", "question": "What does ERR-4012 mean?", "expected_doc": "troubleshooting-guide", "answerable": true, "type": "error_code"}
+{"id": "q06", "question": "How do I fix ERR-5003?", "expected_doc": "troubleshooting-guide", "answerable": true, "type": "error_code"}
+{"id": "q07", "question": "File sync is stuck at 99 percent, what should I do?", "expected_doc": "troubleshooting-guide", "answerable": true, "type": "lookup"}
+{"id": "q08", "question": "Users are stuck in a login loop with SSO", "expected_doc": "troubleshooting-guide", "answerable": true, "type": "lookup"}
+{"id": "q09", "question": "What is the API rate limit per minute?", "expected_doc": "api-guide", "answerable": true, "type": "multi_doc"}
+{"id": "q10", "question": "What HTTP status is returned when the rate limit is exceeded?", "expected_doc": "api-guide", "answerable": true, "type": "lookup"}
+{"id": "q11", "question": "Does the old API key keep working after rotation?", "expected_doc": "api-guide", "answerable": true, "type": "lookup"}
+{"id": "q12", "question": "How are webhooks signed?", "expected_doc": "api-guide", "answerable": true, "type": "lookup"}
+{"id": "q13", "question": "How many items per page do list endpoints return?", "expected_doc": "api-guide", "answerable": true, "type": "lookup"}
+{"id": "q14", "question": "When do teammate invitations expire?", "expected_doc": "onboarding-guide", "answerable": true, "type": "lookup"}
+{"id": "q15", "question": "Who can delete the workspace?", "expected_doc": "onboarding-guide", "answerable": true, "type": "lookup"}
+{"id": "q16", "question": "How do I connect the Jira integration?", "expected_doc": "onboarding-guide", "answerable": true, "type": "lookup"}
+{"id": "q17", "question": "How long is customer content retained after workspace deletion?", "expected_doc": "security-policy", "answerable": true, "type": "lookup"}
+{"id": "q18", "question": "Is multi-factor authentication mandatory for admins?", "expected_doc": "security-policy", "answerable": true, "type": "lookup"}
+{"id": "q19", "question": "Where is EU customer data stored?", "expected_doc": "security-policy", "answerable": true, "type": "lookup"}
+{"id": "q20", "question": "How long are audit logs retained?", "expected_doc": "security-policy", "answerable": true, "type": "lookup"}
+{"id": "q21", "question": "Which version added SAML single sign-on?", "expected_doc": "release-notes", "answerable": true, "type": "lookup"}
+{"id": "q22", "question": "When did the API rate limit change from 300 to 600?", "expected_doc": "release-notes", "answerable": true, "type": "multi_doc"}
+{"id": "q23", "question": "Is the refund window 14 days?", "expected_doc": "billing-faq", "answerable": true, "type": "outdated_trap"}
+{"id": "q24", "question": "What is the parental leave policy?", "expected_doc": null, "answerable": false, "type": "no_answer"}
+{"id": "q25", "question": "Can I pay with cryptocurrency?", "expected_doc": null, "answerable": false, "type": "no_answer"}
+{"id": "q26", "question": "What is the office address in Berlin?", "expected_doc": null, "answerable": false, "type": "no_answer"}
+{"id": "q27", "question": "Does the mobile app support dark mode?", "expected_doc": null, "answerable": false, "type": "no_answer"}
+{"id": "q28", "question": "What is the SLA uptime guarantee percentage?", "expected_doc": null, "answerable": false, "type": "no_answer"}
+{"id": "q29", "question": "Retry-After header seconds for 429", "expected_doc": "api-guide", "answerable": true, "type": "keyword"}
+{"id": "q30", "question": "SAML entity ID mismatch", "expected_doc": "troubleshooting-guide", "answerable": true, "type": "keyword"}
+{"id": "q31", "question": "refunded purchases payment method", "expected_doc": "billing-faq", "answerable": true, "type": "paraphrase"}
+{"id": "q32", "question": "authenticator requirement for owners", "expected_doc": "security-policy", "answerable": true, "type": "paraphrase"}
+{"id": "q33", "question": "invited members expiring", "expected_doc": "onboarding-guide", "answerable": true, "type": "paraphrase"}
+{"id": "q34", "question": "verifying signatures on incoming webhook payloads", "expected_doc": "api-guide", "answerable": true, "type": "paraphrase"}
+{"id": "q35", "question": "integration timing out after 30 seconds", "expected_doc": "troubleshooting-guide", "answerable": true, "type": "paraphrase"}
+{"id": "q36", "question": "HMAC", "expected_doc": "api-guide", "answerable": true, "type": "keyword"}
+{"id": "q37", "question": "read-only mode unpaid balance", "expected_doc": "billing-faq", "answerable": true, "type": "keyword"}
+{"id": "q38", "question": "prorated credit annual plan", "expected_doc": "billing-faq", "answerable": true, "type": "keyword"}

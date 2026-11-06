@@ -1,0 +1,16 @@
+{
+  "watch_paths": ["prompts/", "evals/"],
+  "block": {
+    "schema_validity_drop": 0.02,
+    "field_accuracy_drop": 0.03,
+    "safety_failures_increase": 0,
+    "avg_cost_increase_pct": 20.0,
+    "p95_latency_increase_pct": 50.0
+  },
+  "warn": {
+    "schema_validity_drop": 0.0,
+    "field_accuracy_drop": 0.01,
+    "avg_cost_increase_pct": 5.0,
+    "p95_latency_increase_pct": 15.0
+  }
+}

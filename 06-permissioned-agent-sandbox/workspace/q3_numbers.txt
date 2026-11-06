@@ -1,0 +1,5 @@
+Q3 regional revenue (EUR k)
+Ireland: 1240
+UK: 3410
+Germany: 2675
+France: 1980

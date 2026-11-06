@@ -1,0 +1,33 @@
+# Copy to .github/workflows/prompt-gate.yml in the repo that owns the prompts.
+name: Prompt safety gate
+
+on:
+  pull_request:
+    paths:
+      - "02-prompt-release-safety-gate/prompts/**"
+      - "02-prompt-release-safety-gate/evals/**"
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run gate
+        id: gate
+        working-directory: 02-prompt-release-safety-gate
+        run: python gate.py --candidate prompts/crm_summary.candidate.json
+      - name: Comment on PR
+        if: always()
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: 02-prompt-release-safety-gate/reports/pr_comment.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prompt-release-report
+          path: 02-prompt-release-safety-gate/reports/

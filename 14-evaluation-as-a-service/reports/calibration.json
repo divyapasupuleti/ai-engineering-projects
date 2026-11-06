@@ -1,0 +1,27 @@
+{
+  "human_kappa": 0.75,
+  "judges": {
+    "judge-mini": {
+      "kappa_pass": 0.607,
+      "mae": 0.708,
+      "spearman": 0.799,
+      "bias": 0.542,
+      "tuned_pass_at": 5,
+      "tuned_kappa": 0.734,
+      "cost_per_1k": 0.4
+    },
+    "judge-large": {
+      "kappa_pass": 0.687,
+      "mae": 0.383,
+      "spearman": 0.874,
+      "bias": 0.067,
+      "tuned_pass_at": 4,
+      "tuned_kappa": 0.687,
+      "cost_per_1k": 6.0
+    }
+  },
+  "chosen": {
+    "judge": "judge-mini",
+    "pass_at": 5
+  }
+}

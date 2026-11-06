@@ -1,0 +1,176 @@
+{"prompt": "rate limit for the API", "cached": "what's the api rate limit thanks", "sim": 0.788, "why": "below threshold"}
+{"prompt": "sorry to bothe,r price of the enterprise plan", "cached": "price of the enterprise plan??", "sim": 0.749, "why": "below threshold"}
+{"prompt": "steps to export data", "cached": "sorry to bother, steps to export data", "sim": 0.765, "why": "below threshold"}
+{"prompt": "sorry to bother, What is the API rate limit?", "cached": "rate limit for the API", "sim": 0.756, "why": "below threshold"}
+{"prompt": "hi, our account seats count thanks", "cached": "hello! What is our seat count on our account?", "sim": 0.744, "why": "below threshold"}
+{"prompt": "quick questoin: enterprise plan price", "cached": "price of the enterprise plan??", "sim": 0.78, "why": "below threshold"}
+{"prompt": "hi, how can i reset my password thx", "cached": "how can i reset my password", "sim": 0.749, "why": "below threshold"}
+{"prompt": "What is teh API rate limit? thx", "cached": "rate limit for the API", "sim": 0.792, "why": "below threshold"}
+{"prompt": "hey - what plan do I need for SSO", "cached": "what plan do I need for SSO thanks", "sim": 0.745, "why": "below threshold"}
+{"prompt": "Can I see my invoice from september? thanks", "cached": "my invoice for september", "sim": 0.765, "why": "below threshold"}
+{"prompt": "How much does the starter plan cost? - urgent", "cached": "hello! How much does the starter plan cost? please", "sim": 0.775, "why": "below threshold"}
+{"prompt": "hello! what plan do I need for SSO??", "cached": "hey - what plan do I need for SSO", "sim": 0.766, "why": "below threshold"}
+{"prompt": "how to export my data", "cached": "How d oI export my data?", "sim": 0.759, "why": "below threshold"}
+{"prompt": "hello! pro plan price thx", "cached": "price of the pro plan??", "sim": 0.783, "why": "below threshold"}
+{"prompt": "hi, How much does the pro plan cost?", "cached": "what does the pro plan cost", "sim": 0.783, "why": "below threshold"}
+{"prompt": "hello! price of the starter plan??", "cached": "starter plan price asap", "sim": 0.749, "why": "below threshold"}
+{"prompt": "what does the starter plan cost asap", "cached": "starter plan price asap", "sim": 0.757, "why": "below threshold"}
+{"prompt": "quick question: steps to export data", "cached": "steps to export data", "sim": 0.753, "why": "below threshold"}
+{"prompt": "how many seats do we have on our account thanks", "cached": "hello! how many seats do we have on our account", "sim": 0.759, "why": "below threshold"}
+{"prompt": "how many API requests per minut eare allowed", "cached": "hey - how many API requests per minute are allowed", "sim": 0.752, "why": "below threshold"}
+{"prompt": "hi, starter plan price", "cached": "starter plan price asap", "sim": 0.784, "why": "below threshold"}
+{"prompt": "how many seats do we have on our account - urgent", "cached": "how many seats do we have on our account thanks", "sim": 0.757, "why": "below threshold"}
+{"prompt": "quick question: reset password how thanks", "cached": "quick question: I forgot my password, how do I reset it? thx", "sim": 0.768, "why": "below threshold"}
+{"prompt": "hi, what does the starter plan cost", "cached": "what does the starter plan cost asap", "sim": 0.78, "why": "below threshold"}
+{"prompt": "hello! how many seats do we have on our account", "cached": "how many seats do we have on our account thanks", "sim": 0.759, "why": "below threshold"}
+{"prompt": "hey - what does the starter plan cost please", "cached": "hi, what does the starter plan cost", "sim": 0.787, "why": "below threshold"}
+{"prompt": "password reset steps asap", "cached": "how can i reset my password", "sim": 0.771, "why": "below threshold"}
+{"prompt": "hello! explain the refund policy", "cached": "hi, explain the refund policy", "sim": 0.796, "why": "below threshold"}
+{"prompt": "my invoice for october", "cached": "hello! my invoice for october thx", "sim": 0.745, "why": "below threshold"}
+{"prompt": "hi, SSO which plan", "cached": "hi, Is SSO included on every plan?", "sim": 0.742, "why": "below threshold"}
+{"prompt": "password reset steps - urgent", "cached": "I forgot my password, how do I reset it? - urgent", "sim": 0.759, "why": "below threshold"}
+{"prompt": "hello! which plan has SSO thanks", "cached": "what plan do I need for SSO thanks", "sim": 0.742, "why": "below threshold"}
+{"prompt": "quick question: what does the enterprise plan cost", "cached": "quick question: How much does the enterprise plna cost?", "sim": 0.783, "why": "below threshold"}
+{"prompt": "hello! I forgot my password, how do I reset it?", "cached": "hello! password reset steps", "sim": 0.755, "why": "below threshold"}
+{"prompt": "hi, how can i reset my password asap", "cached": "password reset steps asap", "sim": 0.767, "why": "below threshold"}
+{"prompt": "hi, our account seats count", "cached": "sorry to bother, What is our seat count on our account?", "sim": 0.742, "why": "below threshold"}
+{"prompt": "Show my invoice for september", "cached": "Can I see my invoice from september? please", "sim": 0.741, "why": "below threshold"}
+{"prompt": "quick question: what does the pro plan cost please", "cached": "quick question: what does the enterprise plan cost", "sim": 0.792, "why": "below threshold"}
+{"prompt": "hi, refund policy please thx", "cached": "refund policy please", "sim": 0.755, "why": "below threshold"}
+{"prompt": "sorry to bother, How much does the starter plan cost?", "cached": "sorry to bother, How much does the pro plan cost?", "sim": 0.832, "why": "entity/number/negation mismatch"}
+{"prompt": "hey - What is your refund policy? thx", "cached": "hi, refund policy please thx", "sim": 0.787, "why": "below threshold"}
+{"prompt": "hey - what's the refund policy", "cached": "hey - What is your refund policy? thx", "sim": 0.795, "why": "below threshold"}
+{"prompt": "How much odes the enterprise plan cost?", "cached": "hi, How much does the enterprise plan cost? asap", "sim": 0.775, "why": "below threshold"}
+{"prompt": "quick question: What is your refund policy? thanks", "cached": "quick question: what's the refund policy thx", "sim": 0.795, "why": "below threshold"}
+{"prompt": "hi, refund policy please - urgent", "cached": "hello! What is your refund policy? - urgent", "sim": 0.785, "why": "below threshold"}
+{"prompt": "rate limit for hte API asap", "cached": "rate limit for the API", "sim": 0.789, "why": "below threshold"}
+{"prompt": "password reset steps thanks", "cached": "hello! password reset steps", "sim": 0.75, "why": "below threshold"}
+{"prompt": "sorry to bother, starter plan price", "cached": "sorry to bother, How much does the starter plan cost?", "sim": 0.753, "why": "below threshold"}
+{"prompt": "password reset steps thx", "cached": "password reset steps thanks", "sim": 0.784, "why": "below threshold"}
+{"prompt": "quick question: How many seats does our account have?", "cached": "quick question: our account seats conut??", "sim": 0.782, "why": "below threshold"}
+{"prompt": "How much is the enterrpise plan per user?", "cached": "How much is the enterprise plan per user?", "sim": 0.818, "why": "entity/number/negation mismatch"}
+{"prompt": "hello! Can I get a refund? hWat is the policy?", "cached": "hello! What is your refund policy? - urgent", "sim": 0.759, "why": "below threshold"}
+{"prompt": "hi, I forgot my password, how do I reset it?", "cached": "hello! I forgot my password, how do I reset it?", "sim": 0.781, "why": "below threshold"}
+{"prompt": "hi, Can I get a refund? What is the policy? thanks", "cached": "hi, refund policy please thx", "sim": 0.78, "why": "below threshold"}
+{"prompt": "Can I see my invoice from october?", "cached": "quick question: Can I see my invoice from october?", "sim": 0.758, "why": "below threshold"}
+{"prompt": "hi, Which plan includes SSO? thanks", "cached": "hi, Is SSO included on every plan?", "sim": 0.784, "why": "below threshold"}
+{"prompt": "hey - reset password how thanks", "cached": "password reset steps thanks", "sim": 0.776, "why": "below threshold"}
+{"prompt": "hi, what plan do I need for SSO asap", "cached": "hi, SSO which plan", "sim": 0.761, "why": "below threshold"}
+{"prompt": "our account seats count asap", "cached": "sorry to bother, What is our seat count on our account?", "sim": 0.745, "why": "below threshold"}
+{"prompt": "hello! refund policy please asap", "cached": "hello! Can I get a refund? hWat is the policy?", "sim": 0.773, "why": "below threshold"}
+{"prompt": "sorry to bother, how many API requests per minute are allowed thx", "cached": "hey - how many API requests per minute are allowed", "sim": 0.746, "why": "below threshold"}
+{"prompt": "how many seats do we have on our account asap", "cached": "how many seats do we have on our account lpease", "sim": 0.759, "why": "below threshold"}
+{"prompt": "hello! I do not want to reset myp assword, how do I keep it?", "cached": "I do not want to reset my password, how do I keep it?", "sim": 0.754, "why": "below threshold"}
+{"prompt": "hello! what odes the pro plan cost", "cached": "what does the pro plan cost", "sim": 0.761, "why": "below threshold"}
+{"prompt": "hi, my invoice for october thanks", "cached": "my invoice for october please", "sim": 0.752, "why": "below threshold"}
+{"prompt": "hey - How much does the pro plan cost? asap", "cached": "hi, How much does the pro plan cost?", "sim": 0.744, "why": "below threshold"}
+{"prompt": "hello! Whihc plan includes SSO? asap", "cached": "Which plan includes SSO? asap", "sim": 0.798, "why": "below threshold"}
+{"prompt": "hello! reset password how thanks", "cached": "hey - reset password how thanks", "sim": 0.788, "why": "below threshold"}
+{"prompt": "hello! what's the api rate limit", "cached": "rate limit for the API", "sim": 0.788, "why": "below threshold"}
+{"prompt": "sorry ot bother, I do not want to reset my password, how do I keep it???", "cached": "I do not want to reset my password, how do I keep it?", "sim": 0.761, "why": "below threshold"}
+{"prompt": "How much does the starter plan cost? thanks", "cached": "How much does the starter plan cost? - urgent", "sim": 0.788, "why": "below threshold"}
+{"prompt": "hello! steps to export data thx", "cached": "steps to export data", "sim": 0.783, "why": "below threshold"}
+{"prompt": "hello! what's the refund policy", "cached": "hello! Can I get a refund? hWat is the policy?", "sim": 0.796, "why": "below threshold"}
+{"prompt": "How do I export my data? please", "cached": "export my workspace data how please", "sim": 0.778, "why": "below threshold"}
+{"prompt": "starter plan price - urgent", "cached": "hi, starter plan price", "sim": 0.77, "why": "below threshold"}
+{"prompt": "sorry to bother, Can I see my invoice from august?", "cached": "Can I see my invoice from august? please", "sim": 0.748, "why": "below threshold"}
+{"prompt": "API rate limit per minuet?", "cached": "rate limit for the API", "sim": 0.768, "why": "below threshold"}
+{"prompt": "hello! export my workspace data how - ugrent", "cached": "export my workspace data how please", "sim": 0.784, "why": "below threshold"}
+{"prompt": "How do I export my data?", "cached": "export my workspace data how", "sim": 0.778, "why": "below threshold"}
+{"prompt": "hey - I forgot my password, how do I reset it?", "cached": "hi, I forgot my password, how do I reset it?", "sim": 0.796, "why": "below threshold"}
+{"prompt": "sorry to bother, How much is the pro plan per user???", "cached": "sorry to bother, How much does the pro plan cost?", "sim": 0.78, "why": "below threshold"}
+{"prompt": "what does the enterprise plan cost - urgent", "cached": "hey - what does the enterprise plan cost", "sim": 0.775, "why": "below threshold"}
+{"prompt": "I forgot my password, how do I reset it? thanks", "cached": "hi, I forgot my password, how do I reset it?", "sim": 0.781, "why": "below threshold"}
+{"prompt": "quick question: How much is the pro plan per user? - urgent", "cached": "quick question: How much is the starter plan per user?", "sim": 0.798, "why": "below threshold"}
+{"prompt": "hey - How do I reset my password? - urgent", "cached": "password reset steps - urgent", "sim": 0.781, "why": "below threshold"}
+{"prompt": "quick question: How many seats does our account have? please", "cached": "how many seats do we have on our account", "sim": 0.765, "why": "below threshold"}
+{"prompt": "hello! how can i reset my password thx", "cached": "hello! reset password how thanks", "sim": 0.788, "why": "below threshold"}
+{"prompt": "hi, what plan do I need for SSO thx", "cached": "hi, what plan do I need for SSO asap", "sim": 0.797, "why": "below threshold"}
+{"prompt": "How much is the pro plan per user? thanks", "cached": "hi, How much is the starter plan per user? thanks", "sim": 0.758, "why": "below threshold"}
+{"prompt": "sorry to bother, how many seats do we have on our account", "cached": "how many seats do we have on our account", "sim": 0.776, "why": "below threshold"}
+{"prompt": "export my workspace data how asap", "cached": "export my workspace data how thanks", "sim": 0.763, "why": "below threshold"}
+{"prompt": "quick question: Which plan include sSSO? please", "cached": "quick question: which plan has SSO", "sim": 0.747, "why": "below threshold"}
+{"prompt": "our account seats conut", "cached": "What is our seat count on our account?", "sim": 0.748, "why": "below threshold"}
+{"prompt": "explain the refund policy - urgent", "cached": "hi, explain the refund policy", "sim": 0.794, "why": "below threshold"}
+{"prompt": "sorry to bother, How much is the pro plan per user? - urgent", "cached": "How much is the pro plan per user?", "sim": 0.776, "why": "below threshold"}
+{"prompt": "explain the refund polciy??", "cached": "sorry to bother, explain the refund polciy please", "sim": 0.784, "why": "below threshold"}
+{"prompt": "hey - Which plan includes SSO?", "cached": "Which plan includes SSO? asap", "sim": 0.763, "why": "below threshold"}
+{"prompt": "hello! What is our seat count on our account?", "cached": "hello! How many seats does our account have?", "sim": 0.793, "why": "below threshold"}
+{"prompt": "hi, what plan do I need for SSO - urgent", "cached": "SSO which plan - urgent", "sim": 0.792, "why": "below threshold"}
+{"prompt": "what does the enterprise plan cost", "cached": "hello! How much does the enterprise plan cost?", "sim": 0.785, "why": "below threshold"}
+{"prompt": "Is SSO included on eevry plan?", "cached": "hey - Which plan includes SSO?", "sim": 0.76, "why": "below threshold"}
+{"prompt": "What is our seat count on our account?", "cached": "quick question: What is our seat count on our account? - urgent", "sim": 0.752, "why": "below threshold"}
+{"prompt": "Show my invoice for september", "cached": "sorry to bother, Show my invoice for september", "sim": 0.794, "why": "below threshold"}
+{"prompt": "Is SSO included on every paln? asap", "cached": "Which paln includes SSO?", "sim": 0.773, "why": "below threshold"}
+{"prompt": "how many API requests per mniute are allowed", "cached": "how many API requests per minut eare allowed", "sim": 0.771, "why": "below threshold"}
+{"prompt": "hello! How much is the starter plan per user?", "cached": "hi, How much is the starter plan per user? thanks", "sim": 0.763, "why": "below threshold"}
+{"prompt": "quick question: how many API requests per minute are allowed - urgent", "cached": "hey - how many API requests per minute are allowed", "sim": 0.742, "why": "below threshold"}
+{"prompt": "export my workspace data how", "cached": "how to export my data", "sim": 0.778, "why": "below threshold"}
+{"prompt": "hello! What is our seat count on our account?", "cached": "What is our seat count o nour account???", "sim": 0.746, "why": "below threshold"}
+{"prompt": "pro plan price??", "cached": "hey - pro plan price asap", "sim": 0.789, "why": "below threshold"}
+{"prompt": "hi, refund oplicy please thanks", "cached": "hi, Can I get a refund? What is the policy? thanks", "sim": 0.784, "why": "below threshold"}
+{"prompt": "hey - how many seats do we have on our account", "cached": "how many seats do we have on our account thx", "sim": 0.788, "why": "below threshold"}
+{"prompt": "hey - my invoice for september??", "cached": "hello! my invoice for september", "sim": 0.749, "why": "below threshold"}
+{"prompt": "quick question: API rate limit per minute? - urgent", "cached": "quick question: rate limit for the API thx", "sim": 0.75, "why": "below threshold"}
+{"prompt": "sorry to bother, What is our seat count on our account? asap", "cached": "sorry to bother, how many seats do we have on our account please", "sim": 0.779, "why": "below threshold"}
+{"prompt": "What is our seat count on our account? please", "cached": "sorry to bother, What is our seat count on our account? asap", "sim": 0.747, "why": "below threshold"}
+{"prompt": "starter plan price asap", "cached": "hello! starter plan price", "sim": 0.749, "why": "below threshold"}
+{"prompt": "hello! how many seats do we have on our account", "cached": "how many seats do we have on our account asap", "sim": 0.766, "why": "below threshold"}
+{"prompt": "hello! How can I export data?", "cached": "hello! steps to export data thx", "sim": 0.793, "why": "below threshold"}
+{"prompt": "hey - password reset steps please", "cached": "hello! password reset steps", "sim": 0.784, "why": "below threshold"}
+{"prompt": "sorry to bother, I forgot my password, how do I reset it? thx", "cached": "sorry to bother, how can i reset my password thanks", "sim": 0.756, "why": "below threshold"}
+{"prompt": "How much does the starter plan cost? - urgent", "cached": "what does the starter plan cost", "sim": 0.787, "why": "below threshold"}
+{"prompt": "hi, steps to export data thanks", "cached": "How can I export data? thanks", "sim": 0.799, "why": "below threshold"}
+{"prompt": "sorry to bother, what does the enterprise plan cost", "cached": "what does the enterprise plan cost", "sim": 0.78, "why": "below threshold"}
+{"prompt": "How many seats does our account have? asap", "cached": "hello! how many seats do we have on our account", "sim": 0.766, "why": "below threshold"}
+{"prompt": "sorry to bother, how ca ni reset my password", "cached": "sorry to bother, how can i reset my password thanks", "sim": 0.766, "why": "below threshold"}
+{"prompt": "sorry to bother, Is SSO included on every plan? asap", "cached": "sorry to bothe,r Is SSO included on every plan???", "sim": 0.777, "why": "below threshold"}
+{"prompt": "sorry to bother, what does the starter plan cost", "cached": "what does the starter plan cost", "sim": 0.777, "why": "below threshold"}
+{"prompt": "sorry to obther, Show my invoice for august", "cached": "sorry to bother, Show my invoice for august asap", "sim": 0.744, "why": "below threshold"}
+{"prompt": "hello! How much is the enterprise plan per user? thx", "cached": "How much is the enterprise plan per user? asap", "sim": 0.793, "why": "below threshold"}
+{"prompt": "sorry to bother, how many seats do we have on our account", "cached": "How many seats does our account have?", "sim": 0.776, "why": "below threshold"}
+{"prompt": "sorry to bother, What is you rrefund policy?", "cached": "sorry to bother, what's the refund policy", "sim": 0.763, "why": "below threshold"}
+{"prompt": "I forgto my password, how do I reset it? - urgent", "cached": "I forgot my password, how do I reset it? - urgent", "sim": 0.799, "why": "below threshold"}
+{"prompt": "price of the starter plan - urgent", "cached": "price of the starter pla n- urgent", "sim": 0.759, "why": "below threshold"}
+{"prompt": "hey - Which plan nicludes SSO?", "cached": "hey - Which plan includes SSO?", "sim": 0.771, "why": "below threshold"}
+{"prompt": "hey - How many seats does our account have? - urgent", "cached": "how many seats do we have on our account", "sim": 0.795, "why": "below threshold"}
+{"prompt": "how many seats do we have on our account", "cached": "hey - How many seats does our account have? - urgent", "sim": 0.795, "why": "below threshold"}
+{"prompt": "our account seats count please", "cached": "What is our seta count on our account? please", "sim": 0.772, "why": "below threshold"}
+{"prompt": "hello! reset password how - urgent", "cached": "hey - How do I reset my password? - urgent", "sim": 0.792, "why": "below threshold"}
+{"prompt": "export my workspace data how thanks", "cached": "hi, export my workspace data how please", "sim": 0.777, "why": "below threshold"}
+{"prompt": "export my workspace data how thx", "cached": "export my workspace data how - urgent", "sim": 0.779, "why": "below threshold"}
+{"prompt": "How do I resetm y password? asap", "cached": "how can i resetm y password thanks", "sim": 0.757, "why": "below threshold"}
+{"prompt": "hey - refund policy please thanks", "cached": "hi, Can I get a refund? What is the policy? thanks", "sim": 0.796, "why": "below threshold"}
+{"prompt": "hey - what does the pro plan cost asap", "cached": "hey - pro plan price asap", "sim": 0.79, "why": "below threshold"}
+{"prompt": "Is SSO included on every plna? thanks", "cached": "which plna has SSO thanks", "sim": 0.756, "why": "below threshold"}
+{"prompt": "sorry to bother, what does the neterprise plan cost", "cached": "sorry to bother, what does the enterprise plan cost", "sim": 0.84, "why": "entity/number/negation mismatch"}
+{"prompt": "hey - explain the refund policy asap", "cached": "hey - Can I get a refund? What ist he policy? asap", "sim": 0.744, "why": "below threshold"}
+{"prompt": "How much dose the pro plan cost?", "cached": "what does the pro plan cost", "sim": 0.77, "why": "below threshold"}
+{"prompt": "I forgot my password, how do I reset it? asap", "cached": "hi, I forgot my password, how do I reset it?", "sim": 0.788, "why": "below threshold"}
+{"prompt": "sorry to bother, pro plan price", "cached": "pro plan price??", "sim": 0.765, "why": "below threshold"}
+{"prompt": "hey - starter plan price", "cached": "starter plan price asap", "sim": 0.776, "why": "below threshold"}
+{"prompt": "explain the refund policy thanks", "cached": "hi, explain the refund policy", "sim": 0.796, "why": "below threshold"}
+{"prompt": "hey - I do not want to reset my password, how do I keep it? - urgent", "cached": "hey - How do I reset my password? - urgent", "sim": 0.832, "why": "entity/number/negation mismatch"}
+{"prompt": "hello! How muhc does the starter plan cost?", "cached": "what does the starter plan cost", "sim": 0.75, "why": "below threshold"}
+{"prompt": "hey - how can i reset my password asap", "cached": "hi, how can i reset my password asap", "sim": 0.787, "why": "below threshold"}
+{"prompt": "What is oyur refund policy? thanks", "cached": "hi, Can I get a refund? What is the policy? thanks", "sim": 0.788, "why": "below threshold"}
+{"prompt": "quick question: staretr plan price", "cached": "quick question: price of the pro plan", "sim": 0.814, "why": "entity/number/negation mismatch"}
+{"prompt": "How muc hdoes the starter plan cost?", "cached": "what does the starter plan cost", "sim": 0.799, "why": "below threshold"}
+{"prompt": "refundp olicy please", "cached": "hey - what's the refundp olicy", "sim": 0.763, "why": "below threshold"}
+{"prompt": "hello! How much does the pro plan cost?", "cached": "hello! How much does the enterprise plan cost?", "sim": 0.766, "why": "below threshold"}
+{"prompt": "How umch is the enterprise plan per user?", "cached": "How much is the enterprise plan per user? asap", "sim": 0.769, "why": "below threshold"}
+{"prompt": "what's the api rate limit - urgnet", "cached": "rate limit for the API", "sim": 0.781, "why": "below threshold"}
+{"prompt": "explain the refund policy - ugrent", "cached": "explain the refund policy - urgent", "sim": 0.8, "why": "below threshold"}
+{"prompt": "sorry to bother, export my workspace data how please", "cached": "export my workspace data how", "sim": 0.784, "why": "below threshold"}
+{"prompt": "how to export my data", "cached": "export my workspace data how", "sim": 0.778, "why": "below threshold"}
+{"prompt": "hi, How much does the staretr plan cost? thanks", "cached": "hi, How much does the pro plan cost? thanks", "sim": 0.82, "why": "entity/number/negation mismatch"}
+{"prompt": "price of the starter plan thx", "cached": "hey - starter plan price", "sim": 0.784, "why": "below threshold"}
+{"prompt": "What is our seat count on our account?", "cached": "What is our saet count on our account? please", "sim": 0.76, "why": "below threshold"}
+{"prompt": "our account seats count", "cached": "sorry to bother, What is our seat count on our account? thx", "sim": 0.76, "why": "below threshold"}
+{"prompt": "How can I export data? asap", "cached": "hi, tseps to export data asap", "sim": 0.796, "why": "below threshold"}
+{"prompt": "password reest steps thx", "cached": "password reset steps thx", "sim": 0.76, "why": "below threshold"}
+{"prompt": "hello! Which plan nicludes SSO? asap", "cached": "hello! Whihc plan includes SSO? asap", "sim": 0.752, "why": "below threshold"}
+{"prompt": "quick question: our account seats count - urgent", "cached": "What is our seat count on our account?", "sim": 0.752, "why": "below threshold"}
+{"prompt": "Can I see my nivoice from september?", "cached": "Can I see my invoice from september?", "sim": 0.755, "why": "below threshold"}
+{"prompt": "How many seats does our account have? - urgent", "cached": "hi, How many seats does our account have? please", "sim": 0.779, "why": "below threshold"}
+{"prompt": "sorry to bother, enterprise plan price thanks", "cached": "sorry to bother, what does the enterprise plan cost", "sim": 0.757, "why": "below threshold"}

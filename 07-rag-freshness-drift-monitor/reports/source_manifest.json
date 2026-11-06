@@ -1,0 +1,92 @@
+{
+  "api-limits#rate-limits": {
+    "chunk_id": "api-limits#rate-limits",
+    "doc": "api-limits",
+    "heading": "Rate limits",
+    "text": "The public API allows 600 requests per minute per workspace. Exceeding the limit returns HTTP 429 with a Retry-After header.",
+    "content_hash": "fc701bd85671e8b7",
+    "owner": "platform-team",
+    "last_reviewed": "2026-09-20",
+    "criticality": "medium"
+  },
+  "api-limits#pagination": {
+    "chunk_id": "api-limits#pagination",
+    "doc": "api-limits",
+    "heading": "Pagination",
+    "text": "List endpoints return up to 100 items per page. Use the next_cursor field to fetch the next page.",
+    "content_hash": "44606e89a6cae056",
+    "owner": "platform-team",
+    "last_reviewed": "2026-09-20",
+    "criticality": "medium"
+  },
+  "data-export#export-api": {
+    "chunk_id": "data-export#export-api",
+    "doc": "data-export",
+    "heading": "Export API",
+    "text": "Workspace exports now run through the POST /v2/exports endpoint and are delivered as Parquet or JSON. The legacy CSV export in Settings has been removed.",
+    "content_hash": "dfebdcf66b3bf901",
+    "owner": "data-team",
+    "last_reviewed": "2026-10-30",
+    "criticality": "medium"
+  },
+  "pricing#plans": {
+    "chunk_id": "pricing#plans",
+    "doc": "pricing",
+    "heading": "Plans",
+    "text": "The Starter plan costs 10 EUR per user per month. The Pro plan costs 29 EUR per user per month. Enterprise pricing is custom and negotiated with sales.",
+    "content_hash": "298dcf34dcb27ab7",
+    "owner": "billing-team",
+    "last_reviewed": "2026-10-28",
+    "criticality": "high"
+  },
+  "pricing#annual-billing": {
+    "chunk_id": "pricing#annual-billing",
+    "doc": "pricing",
+    "heading": "Annual billing",
+    "text": "Annual billing gives a 20% discount compared with monthly billing. Annual plans are invoiced up front.",
+    "content_hash": "6e07ce7ab91862b7",
+    "owner": "billing-team",
+    "last_reviewed": "2026-10-28",
+    "criticality": "high"
+  },
+  "refunds#refund-window": {
+    "chunk_id": "refunds#refund-window",
+    "doc": "refunds",
+    "heading": "Refund window",
+    "text": "Monthly plans can be refunded within 14 days of the charge. Annual plans are refunded pro rata for unused months.",
+    "content_hash": "a015332d40222543",
+    "owner": "billing-team",
+    "last_reviewed": "2026-10-28",
+    "criticality": "high"
+  },
+  "refunds#how-to-request": {
+    "chunk_id": "refunds#how-to-request",
+    "doc": "refunds",
+    "heading": "How to request",
+    "text": "Open Billing > Invoices, select the charge and click Request refund. Refunds are processed in 5 to 7 business days.",
+    "content_hash": "2c4be570d1922d8f",
+    "owner": "billing-team",
+    "last_reviewed": "2026-10-28",
+    "criticality": "high"
+  },
+  "sso#saml-sso": {
+    "chunk_id": "sso#saml-sso",
+    "doc": "sso",
+    "heading": "SAML SSO",
+    "text": "SAML SSO is available on the Enterprise plan only. Configure it under Settings > Security > SSO.",
+    "content_hash": "53887504b741bd65",
+    "owner": "identity-team",
+    "last_reviewed": "2025-12-01",
+    "criticality": "medium"
+  },
+  "sso#scim-provisioning": {
+    "chunk_id": "sso#scim-provisioning",
+    "doc": "sso",
+    "heading": "SCIM provisioning",
+    "text": "SCIM user provisioning is now supported on the Enterprise plan. Connect Okta or Azure AD under Settings > Security > SCIM.",
+    "content_hash": "ce77a101bcf85b67",
+    "owner": "identity-team",
+    "last_reviewed": "2025-12-01",
+    "criticality": "medium"
+  }
+}

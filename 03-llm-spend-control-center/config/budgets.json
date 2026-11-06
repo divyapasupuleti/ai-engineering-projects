@@ -1,0 +1,6 @@
+{
+  "support": {"daily_usd": 0.40, "monthly_usd": 9.0},
+  "sales": {"daily_usd": 0.05, "monthly_usd": 1.5},
+  "legal": {"daily_usd": 1.20, "monthly_usd": 25.0},
+  "engineering": {"daily_usd": 0.08, "monthly_usd": 2.4}
+}

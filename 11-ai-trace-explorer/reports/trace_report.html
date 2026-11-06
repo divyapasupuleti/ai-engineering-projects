@@ -1,0 +1,72 @@
+<html><head><meta charset='utf-8'><title>Trace report</title><style>body{font-family:system-ui;margin:24px;color:#1a1a1a}table{border-collapse:collapse;margin:8px 0}td,th{border:1px solid #ddd;padding:4px 8px;font-size:13px}.bar{height:14px;position:absolute;border-radius:3px}.row{position:relative;height:18px;margin:2px 0;background:#f5f7fa}.lbl{font-size:12px;width:200px;display:inline-block}.ok{background:#1e88e5}.error{background:#e53935}h2{margin-top:28px}</style></head><body>
+<h1>AI trace report</h1><p>300 traces · 54 hard failures</p>
+<h2>Root-cause taxonomy</h2><table><tr><th>category</th><th>count</th><th>owner</th><th>suggested fix</th></tr>
+<tr><td>schema_invalid</td><td>38</td><td>prompt</td><td>Output was not valid JSON: use structured output / JSON mode; compare prompt versions.</td></tr>
+<tr><td>retrieval_empty</td><td>19</td><td>rag</td><td>No documents retrieved: check query rewriting and index freshness before blaming the model.</td></tr>
+<tr><td>ungrounded</td><td>17</td><td>quality</td><td>Answer has low grounding and no citations: enforce citations via the output guardrail.</td></tr>
+<tr><td>rate_limited_recovered</td><td>11</td><td>platform</td><td>Recovered after 429 retries; latency cost of backoff is visible in the waterfall.</td></tr>
+<tr><td>latency_slo</td><td>10</td><td>performance</td><td>Span exceeded its latency SLO: profile this dependency or cache its results.</td></tr>
+<tr><td>llm_timeout</td><td>10</td><td>provider</td><td>Set a per-call timeout budget and fail over to a second model (gateway routing).</td></tr>
+<tr><td>tool_error</td><td>4</td><td>integrations</td><td>Downstream API failed: add a circuit breaker and a graceful &#x27;cannot check order&#x27; answer.</td></tr>
+<tr><td>context_overflow</td><td>2</td><td>rag</td><td>Retrieved context exceeds the model window: lower k, trim chunks or summarise before generation.</td></tr>
+</table><h2>Example waterfall per category</h2>
+<h3>schema_invalid · trace 3c614d1739724e4a · 2282 ms</h3><p>root cause: <b>validate.output</b> — StepError: output is not valid JSON: Expecting property name enclosed in double quotes</p>
+<div><span class='lbl'>request (2282 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (7 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:0.50%'></div></div></div>
+<div><span class='lbl'>retrieve (79 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.32%;width:3.46%'></div></div></div>
+<div><span class='lbl'>rerank (46 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:3.78%;width:2.00%'></div></div></div>
+<div><span class='lbl'>llm.generate (2038 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:5.78%;width:89.32%'></div></div></div>
+<div><span class='lbl'>tool.lookup_order (109 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:95.10%;width:4.78%'></div></div></div>
+<div><span class='lbl'>validate.output (3 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:99.88%;width:0.50%'></div></div></div>
+<h3>rate_limited_recovered · trace b78e429dee9a42ce · 4127 ms</h3><p>root cause: <b>llm.generate</b> — 2 x HTTP 429</p>
+<div><span class='lbl'>request (4127 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (5 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:0.50%'></div></div></div>
+<div><span class='lbl'>retrieve (55 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.11%;width:1.33%'></div></div></div>
+<div><span class='lbl'>rerank (32 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:1.44%;width:0.78%'></div></div></div>
+<div><span class='lbl'>llm.generate (622 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:2.22%;width:15.07%'></div></div></div>
+<div><span class='lbl'>llm.generate (1112 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:17.30%;width:26.94%'></div></div></div>
+<div><span class='lbl'>llm.generate (2190 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:44.23%;width:53.07%'></div></div></div>
+<div><span class='lbl'>tool.lookup_order (106 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:97.30%;width:2.57%'></div></div></div>
+<div><span class='lbl'>validate.output (5 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:99.87%;width:0.50%'></div></div></div>
+<h3>latency_slo · trace 5d3e5a231f704fb6 · 2189 ms</h3><p>root cause: <b>rerank</b> — 1096 ms &gt; 300 ms SLO</p>
+<div><span class='lbl'>request (2189 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (4 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:0.50%'></div></div></div>
+<div><span class='lbl'>retrieve (64 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.17%;width:2.92%'></div></div></div>
+<div><span class='lbl'>rerank (1096 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:3.09%;width:50.07%'></div></div></div>
+<div><span class='lbl'>llm.generate (1022 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:53.15%;width:46.68%'></div></div></div>
+<div><span class='lbl'>validate.output (4 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:99.83%;width:0.50%'></div></div></div>
+<h3>ungrounded · trace 6c3eb7e180664c49 · 1353 ms</h3><p>root cause: <b>llm.generate</b> — grounding=0.27</p>
+<div><span class='lbl'>request (1353 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (5 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:0.50%'></div></div></div>
+<div><span class='lbl'>retrieve (58 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.40%;width:4.28%'></div></div></div>
+<div><span class='lbl'>rerank (26 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:4.68%;width:1.90%'></div></div></div>
+<div><span class='lbl'>llm.generate (1142 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:6.58%;width:84.42%'></div></div></div>
+<div><span class='lbl'>tool.lookup_order (118 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:91.00%;width:8.76%'></div></div></div>
+<div><span class='lbl'>validate.output (3 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:99.76%;width:0.50%'></div></div></div>
+<h3>retrieval_empty · trace 158f6b47bd8e48e1 · 1632 ms</h3><p>root cause: <b>retrieve</b> — 0 hits</p>
+<div><span class='lbl'>request (1632 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (5 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:0.50%'></div></div></div>
+<div><span class='lbl'>retrieve (85 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.32%;width:5.18%'></div></div></div>
+<div><span class='lbl'>rerank (36 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:5.50%;width:2.23%'></div></div></div>
+<div><span class='lbl'>llm.generate (1502 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:7.74%;width:92.04%'></div></div></div>
+<div><span class='lbl'>validate.output (4 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:99.77%;width:0.50%'></div></div></div>
+<h3>llm_timeout · trace df0f17eb25af451d · 30119 ms</h3><p>root cause: <b>request</b> — StepError: provider timeout after 30000 ms</p>
+<div><span class='lbl'>request (30119 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (4 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:0.50%'></div></div></div>
+<div><span class='lbl'>retrieve (64 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.01%;width:0.50%'></div></div></div>
+<div><span class='lbl'>rerank (51 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.22%;width:0.50%'></div></div></div>
+<div><span class='lbl'>llm.generate (30000 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:0.40%;width:99.60%'></div></div></div>
+<h3>tool_error · trace 574c55dbbfd843b4 · 1888 ms</h3><p>root cause: <b>tool.lookup_order</b> — StepError: orders_api returned 503</p>
+<div><span class='lbl'>request (1888 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (7 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:0.50%'></div></div></div>
+<div><span class='lbl'>retrieve (83 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.35%;width:4.40%'></div></div></div>
+<div><span class='lbl'>rerank (32 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:4.74%;width:1.68%'></div></div></div>
+<div><span class='lbl'>llm.generate (1686 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:6.42%;width:89.31%'></div></div></div>
+<div><span class='lbl'>tool.lookup_order (81 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:95.73%;width:4.27%'></div></div></div>
+<h3>context_overflow · trace c3ab1cb2542841c9 · 132 ms</h3><p>root cause: <b>request</b> — StepError: context length 8806 exceeds 8000</p>
+<div><span class='lbl'>request (132 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:0.00%;width:100.00%'></div></div></div>
+<div><span class='lbl'>guard.input (7 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:0.00%;width:5.36%'></div></div></div>
+<div><span class='lbl'>retrieve (70 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:5.36%;width:52.97%'></div></div></div>
+<div><span class='lbl'>rerank (25 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar ok' style='left:58.33%;width:19.00%'></div></div></div>
+<div><span class='lbl'>llm.generate (30 ms)</span><div class='row' style='display:inline-block;width:60%'><div class='bar error' style='left:77.32%;width:22.68%'></div></div></div>
+</body></html>

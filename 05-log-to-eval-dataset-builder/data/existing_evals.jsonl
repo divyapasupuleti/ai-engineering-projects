@@ -1,0 +1,3 @@
+{"id": "eval-legacy-001", "feature": "support_bot", "input": "how do i reset my password", "eval_type": "golden_answer", "status": "approved"}
+{"id": "eval-legacy-002", "feature": "sql_helper", "input": "top 10 customers by revenue", "eval_type": "golden_answer", "status": "approved"}
+{"id": "eval-legacy-003", "feature": "summarizer", "input": "summarise: meeting notes about q4 launch, owners alex and sam, deadline dec 1", "eval_type": "rubric", "status": "approved"}

@@ -1,0 +1,21 @@
+{
+  "baseline": {
+    "cases": 90,
+    "pass_rate": 0.7777777777777778,
+    "schema_validity": 1.0,
+    "field_accuracy": 0.9444444444444444,
+    "safety_failures": 0,
+    "avg_cost_usd": 5.1101666666666666e-05,
+    "p95_latency_ms": 842.4
+  },
+  "candidate": {
+    "cases": 90,
+    "pass_rate": 0.26666666666666666,
+    "schema_validity": 0.6444444444444445,
+    "field_accuracy": 0.5888888888888889,
+    "safety_failures": 38,
+    "avg_cost_usd": 0.0014876944444444445,
+    "p95_latency_ms": 1943.8
+  },
+  "decision": "BLOCK"
+}

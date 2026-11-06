@@ -1,0 +1,13 @@
+{
+  "hardware": {"name": "laptop-m2-16gb", "memory_budget_gb": 12, "slo_p95_ms": 6000},
+  "active": "llama3.1-8b:q4_K_M",
+  "previous": null,
+  "profiles": {
+    "llama3.1-8b:q4_K_M": {"ollama_tag": "llama3.1:8b-instruct-q4_K_M", "memory_gb": 4.9, "ttft_ms": 180, "tokens_per_s": 38, "max_parallel": 4, "quality": 0.81, "context": 8192},
+    "llama3.1-8b:q8_0":   {"ollama_tag": "llama3.1:8b-instruct-q8_0",   "memory_gb": 8.5, "ttft_ms": 260, "tokens_per_s": 24, "max_parallel": 3, "quality": 0.84, "context": 8192},
+    "llama3.1-8b:fp16":   {"ollama_tag": "llama3.1:8b-instruct-fp16",   "memory_gb": 16.1, "ttft_ms": 420, "tokens_per_s": 13, "max_parallel": 2, "quality": 0.85, "context": 8192},
+    "qwen2.5-3b:q4_K_M":  {"ollama_tag": "qwen2.5:3b-instruct-q4_K_M",  "memory_gb": 2.1, "ttft_ms": 90,  "tokens_per_s": 72, "max_parallel": 6, "quality": 0.71, "context": 32768},
+    "broken-model:q4":    {"ollama_tag": "does-not-exist",             "memory_gb": 3.0, "ttft_ms": 100, "tokens_per_s": 40, "max_parallel": 4, "quality": 0.0, "context": 4096, "fail": true}
+  },
+  "server": {"api_keys": ["local-dev-key"], "max_queue": 8, "request_timeout_s": 60}
+}

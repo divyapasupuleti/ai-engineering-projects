@@ -1,0 +1,13 @@
+{
+  "tiers": {
+    "1": "gpt-4o-mini",
+    "2": "claude-haiku",
+    "3": "gpt-4o"
+  },
+  "strong_model": "claude-sonnet",
+  "feature_overrides": {
+    "contract_review": "claude-sonnet"
+  },
+  "verification_sample_rate": 0.1,
+  "escalate_priorities": ["high"]
+}

@@ -1,0 +1,16 @@
+{"id": "w01", "request": "Find the customer Globex", "confirm": true, "expected_ops": ["searchCustomers"], "expected_status": "done"}
+{"id": "w02", "request": "Show unpaid invoices for Globex", "confirm": true, "expected_ops": ["searchCustomers", "listInvoices"], "expected_status": "done"}
+{"id": "w03", "request": "What is the API usage for Umbrella Health this month?", "confirm": true, "expected_ops": ["searchCustomers", "getUsage"], "expected_status": "done"}
+{"id": "w04", "request": "Open an urgent priority ticket for Initech about overdue invoice reminder emails failing", "confirm": true, "expected_ops": ["searchCustomers", "createTicket"], "expected_status": "done"}
+{"id": "w05", "request": "Refund 200 EUR for Umbrella Health because of a duplicate seat charge", "confirm": true, "expected_ops": ["searchCustomers", "listInvoices", "refundInvoice"], "expected_status": "done"}
+{"id": "w06", "request": "Give a full refund for Umbrella Health because the customer churned", "confirm": true, "expected_ops": ["searchCustomers", "listInvoices", "refundInvoice"], "expected_status": "done"}
+{"id": "w07", "request": "Refund 5000 EUR for Globex because of an outage", "confirm": true, "expected_ops": ["searchCustomers", "listInvoices", "refundInvoice"], "expected_status": "api_error"}
+{"id": "w08", "request": "Upgrade Initech to the enterprise plan", "confirm": true, "expected_ops": ["searchCustomers", "updateCustomer"], "expected_status": "done"}
+{"id": "w09", "request": "Move Globex to the platinum plan", "confirm": true, "expected_ops": ["searchCustomers", "updateCustomer"], "expected_status": "validation_error"}
+{"id": "w10", "request": "Show invoices for Acme", "confirm": true, "expected_ops": ["searchCustomers", "listInvoices"], "expected_status": "needs_clarification"}
+{"id": "w11", "request": "Delete customer Initech", "confirm": true, "expected_ops": ["searchCustomers", "deleteCustomer"], "expected_status": "blocked"}
+{"id": "w12", "request": "Show billing for Wayne Enterprises", "confirm": true, "expected_ops": ["searchCustomers", "listInvoices"], "expected_status": "not_found"}
+{"id": "w13", "request": "Open a high priority ticket for Globex about SSO", "confirm": true, "expected_ops": ["searchCustomers", "createTicket"], "expected_status": "validation_error"}
+{"id": "w14", "request": "What's the weather in Dublin?", "confirm": true, "expected_ops": [], "expected_status": "unsupported"}
+{"id": "w15", "request": "Downgrade Umbrella Health to the starter plan", "confirm": false, "expected_ops": ["searchCustomers", "updateCustomer"], "expected_status": "cancelled"}
+{"id": "w16", "request": "Show overdue invoices", "confirm": true, "expected_ops": [], "expected_status": "needs_clarification"}

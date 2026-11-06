@@ -1,0 +1,99 @@
+{
+  "no_cache": {
+    "hit_rate": 0.0,
+    "exact": 0,
+    "semantic": 0,
+    "upstream": 1859,
+    "bypass": 141,
+    "wrong": 0,
+    "wrong_rate_of_hits": 0.0,
+    "cost": 6.449999999999723,
+    "p50": 2620.0,
+    "p95": 2620.0
+  },
+  "exact_only": {
+    "hit_rate": 0.318,
+    "exact": 636,
+    "semantic": 0,
+    "upstream": 1223,
+    "bypass": 141,
+    "wrong": 0,
+    "wrong_rate_of_hits": 0.0,
+    "cost": 4.398899999999984,
+    "p50": 2638.0,
+    "p95": 2638.0
+  },
+  "semantic_unvalidated": {
+    "hit_rate": 0.5835,
+    "exact": 183,
+    "semantic": 984,
+    "upstream": 692,
+    "bypass": 141,
+    "wrong": 4,
+    "wrong_rate_of_hits": 0.003427592116538132,
+    "cost": 2.686425000000021,
+    "p50": 18.0,
+    "p95": 2638.0
+  },
+  "semantic_no_invalidation": {
+    "hit_rate": 0.597,
+    "exact": 198,
+    "semantic": 996,
+    "upstream": 665,
+    "bypass": 141,
+    "wrong": 141,
+    "wrong_rate_of_hits": 0.11809045226130653,
+    "cost": 2.5993500000000203,
+    "p50": 18.0,
+    "p95": 2638.0
+  },
+  "semantic_validated": {
+    "hit_rate": 0.581,
+    "exact": 183,
+    "semantic": 979,
+    "upstream": 697,
+    "bypass": 141,
+    "wrong": 0,
+    "wrong_rate_of_hits": 0.0,
+    "cost": 2.7025500000000213,
+    "p50": 18.0,
+    "p95": 2638.0
+  },
+  "sweep": {
+    "0.6": {
+      "hit_rate": 0.718,
+      "wrong": 1,
+      "wrong_unvalidated": 95
+    },
+    "0.7": {
+      "hit_rate": 0.667,
+      "wrong": 1,
+      "wrong_unvalidated": 13
+    },
+    "0.75": {
+      "hit_rate": 0.633,
+      "wrong": 0,
+      "wrong_unvalidated": 10
+    },
+    "0.8": {
+      "hit_rate": 0.581,
+      "wrong": 0,
+      "wrong_unvalidated": 4
+    },
+    "0.85": {
+      "hit_rate": 0.5325,
+      "wrong": 0,
+      "wrong_unvalidated": 0
+    },
+    "0.9": {
+      "hit_rate": 0.459,
+      "wrong": 0,
+      "wrong_unvalidated": 0
+    },
+    "0.95": {
+      "hit_rate": 0.389,
+      "wrong": 0,
+      "wrong_unvalidated": 0
+    }
+  }
+}

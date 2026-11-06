@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "policies": [
+    {"id": "schema_mismatch", "category": "format", "severity": "medium", "detector": "schema", "action": "rewrite",
+     "description": "Features that expect JSON must receive valid JSON."},
+    {"id": "pii_leak", "category": "privacy", "severity": "high", "detector": "pii", "action": "rewrite",
+     "types": ["email", "credit_card"],
+     "description": "Emails and card numbers must not appear in outputs."},
+    {"id": "unsafe_instructions", "category": "safety", "severity": "critical", "detector": "keywords", "action": "block",
+     "patterns": ["make a weapon", "mix bleach and ammonia"],
+     "description": "Instructions that could cause physical harm are never shown."},
+    {"id": "toxic_language", "category": "safety", "severity": "high", "detector": "keywords", "action": "block",
+     "patterns": ["idiot", "shut up"],
+     "description": "Abusive language towards users."},
+    {"id": "brand_voice", "category": "brand", "severity": "low", "detector": "brand", "action": "approve_with_warning",
+     "patterns": ["obviously", "lol"],
+     "description": "Tone should stay professional."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "policies": [
+    {"id": "schema_mismatch", "category": "format", "severity": "medium", "detector": "schema", "action": "rewrite",
+     "description": "Features that expect JSON must receive valid JSON."},
+    {"id": "pii_leak", "category": "privacy", "severity": "high", "detector": "pii", "action": "rewrite",
+     "types": ["email", "phone", "credit_card", "api_key", "iban"],
+     "description": "Personal data and secrets must not appear in outputs unless the feature allows that type."},
+    {"id": "unsafe_instructions", "category": "safety", "severity": "critical", "detector": "keywords", "action": "block",
+     "patterns": ["disable the smoke detector", "bypass the alarm", "make a weapon", "mix bleach and ammonia", "how to pick a lock to break in"],
+     "description": "Instructions that could cause physical harm are never shown."},
+    {"id": "toxic_language", "category": "safety", "severity": "high", "detector": "keywords", "action": "block",
+     "patterns": ["idiot", "stupid customer", "shut up", "you people"],
+     "description": "Abusive language towards users."},
+    {"id": "overconfident_advice", "category": "regulated_advice", "severity": "medium", "detector": "overconfidence", "action": "rewrite",
+     "patterns": ["guaranteed to cure", "100% safe", "no risk at all", "you will definitely win", "guaranteed returns", "cannot fail"],
+     "description": "Medical, legal and financial statements must carry appropriate uncertainty."},
+    {"id": "unsupported_claim", "category": "grounding", "severity": "high", "detector": "judge", "action": "human_review",
+     "description": "Numeric or factual claims must be supported by the provided context."},
+    {"id": "brand_voice", "category": "brand", "severity": "low", "detector": "brand", "action": "approve_with_warning",
+     "patterns": ["obviously", "as i already said", "lol"],
+     "description": "Tone should stay professional."}
+  ]
+}

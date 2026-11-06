@@ -1,0 +1,140 @@
+{
+  "hardware": {
+    "name": "laptop-m2-16gb",
+    "memory_budget_gb": 12,
+    "slo_p95_ms": 6000
+  },
+  "time_scale": 0.02,
+  "results": {
+    "llama3.1-8b:q4_K_M": {
+      "memory_gb": 4.9,
+      "quality": 0.81,
+      "runs": [
+        {
+          "concurrency": 1,
+          "ok": 8,
+          "rejected_429": 0,
+          "p50_ms": 1406,
+          "p95_ms": 1409,
+          "ttft_p50_ms": 180,
+          "tokens_per_s": 25.7
+        },
+        {
+          "concurrency": 4,
+          "ok": 12,
+          "rejected_429": 0,
+          "p50_ms": 1407,
+          "p95_ms": 1459,
+          "ttft_p50_ms": 180,
+          "tokens_per_s": 93.1
+        },
+        {
+          "concurrency": 8,
+          "ok": 24,
+          "rejected_429": 0,
+          "p50_ms": 2627,
+          "p95_ms": 2814,
+          "ttft_p50_ms": 1482,
+          "tokens_per_s": 101.4
+        },
+        {
+          "concurrency": 16,
+          "ok": 15,
+          "rejected_429": 33,
+          "p50_ms": 2408,
+          "p95_ms": 4223,
+          "ttft_p50_ms": 1289,
+          "tokens_per_s": 98.6
+        }
+      ]
+    },
+    "llama3.1-8b:q8_0": {
+      "memory_gb": 8.5,
+      "quality": 0.84,
+      "runs": [
+        {
+          "concurrency": 1,
+          "ok": 8,
+          "rejected_429": 0,
+          "p50_ms": 1969,
+          "p95_ms": 2004,
+          "ttft_p50_ms": 260,
+          "tokens_per_s": 17.8
+        },
+        {
+          "concurrency": 4,
+          "ok": 12,
+          "rejected_429": 0,
+          "p50_ms": 1976,
+          "p95_ms": 3773,
+          "ttft_p50_ms": 260,
+          "tokens_per_s": 53.5
+        },
+        {
+          "concurrency": 8,
+          "ok": 24,
+          "rejected_429": 0,
+          "p50_ms": 5714,
+          "p95_ms": 5938,
+          "ttft_p50_ms": 3914,
+          "tokens_per_s": 54.3
+        },
+        {
+          "concurrency": 16,
+          "ok": 11,
+          "rejected_429": 37,
+          "p50_ms": 3968,
+          "p95_ms": 7781,
+          "ttft_p50_ms": 2173,
+          "tokens_per_s": 48.2
+        }
+      ]
+    },
+    "llama3.1-8b:fp16": {
+      "skipped": "llama3.1-8b:fp16 needs 16.1 GB > budget 12 GB"
+    },
+    "qwen2.5-3b:q4_K_M": {
+      "memory_gb": 2.1,
+      "quality": 0.71,
+      "runs": [
+        {
+          "concurrency": 1,
+          "ok": 8,
+          "rejected_429": 0,
+          "p50_ms": 757,
+          "p95_ms": 758,
+          "ttft_p50_ms": 90,
+          "tokens_per_s": 44.4
+        },
+        {
+          "concurrency": 4,
+          "ok": 12,
+          "rejected_429": 0,
+          "p50_ms": 725,
+          "p95_ms": 790,
+          "ttft_p50_ms": 90,
+          "tokens_per_s": 166.5
+        },
+        {
+          "concurrency": 8,
+          "ok": 24,
+          "rejected_429": 0,
+          "p50_ms": 784,
+          "p95_ms": 1202,
+          "ttft_p50_ms": 90,
+          "tokens_per_s": 250.9
+        },
+        {
+          "concurrency": 16,
+          "ok": 48,
+          "rejected_429": 0,
+          "p50_ms": 1196,
+          "p95_ms": 1402,
+          "ttft_p50_ms": 553,
+          "tokens_per_s": 254.1
+        }
+      ]
+    }
+  },
+  "recommendation": "llama3.1-8b:q8_0"
+}

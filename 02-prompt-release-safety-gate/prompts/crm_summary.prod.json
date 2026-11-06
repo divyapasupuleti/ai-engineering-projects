@@ -1,0 +1,22 @@
+{
+  "id": "crm_summary",
+  "version": "1.0.0",
+  "owner": "support-ai@company.example",
+  "description": "Turn messy customer notes into a structured CRM summary.",
+  "model": "gpt-4o-mini",
+  "temperature": 0.0,
+  "system_prompt": "You are a CRM assistant. Return ONLY JSON with keys summary, sentiment, next_action, urgency, confidence. Keep the summary under 25 words. Never include email addresses or phone numbers.",
+  "few_shot": [
+    {"note": "customer cant login since yesterday, pretty annoyed", "output": {"summary": "Customer cannot log in since yesterday.", "sentiment": "negative", "next_action": "Escalate to engineering", "urgency": "medium", "confidence": 0.8}}
+  ],
+  "rules": {
+    "style": "concise",
+    "summary_max_words": 25,
+    "redact_contacts": true,
+    "json_only": true,
+    "negative_words": ["angry", "annoyed", "frustrated", "furious", "terrible", "unhappy", "disappointed", "upset"],
+    "positive_words": ["happy", "great", "love", "thanks", "pleased", "excellent"],
+    "high_urgency": ["asap", "urgent", "outage", "immediately", "down"],
+    "medium_urgency": ["this week", "soon", "deadline"]
+  }
+}

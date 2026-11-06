@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.3",
+  "info": {"title": "Acme SaaS Admin API (mock)", "version": "1.4.0"},
+  "paths": {
+    "/customers": {
+      "get": {
+        "operationId": "searchCustomers",
+        "summary": "Search customers by name",
+        "description": "Find customer accounts by company name. Returns id, name, plan and status.",
+        "parameters": [{"name": "search", "in": "query", "required": true, "schema": {"type": "string", "minLength": 2}}]
+      }
+    },
+    "/customers/{customer_id}": {
+      "patch": {
+        "operationId": "updateCustomer",
+        "summary": "Change a customer's plan",
+        "description": "Upgrade or downgrade the subscription plan of a customer account.",
+        "parameters": [{"name": "customer_id", "in": "path", "required": true, "schema": {"type": "string"}}],
+        "requestBody": {"schema": {"type": "object", "required": ["plan"], "properties": {"plan": {"type": "string", "enum": ["starter", "pro", "enterprise"]}}}}
+      },
+      "delete": {
+        "operationId": "deleteCustomer",
+        "summary": "Delete a customer account",
+        "description": "Permanently delete a customer account and all of its data.",
+        "parameters": [{"name": "customer_id", "in": "path", "required": true, "schema": {"type": "string"}}]
+      }
+    },
+    "/invoices": {
+      "get": {
+        "operationId": "listInvoices",
+        "summary": "List invoices for a customer",
+        "description": "List billing invoices and charges for a customer, optionally filtered by status paid, unpaid or overdue.",
+        "parameters": [
+          {"name": "customer_id", "in": "query", "required": true, "schema": {"type": "string"}},
+          {"name": "status", "in": "query", "required": false, "schema": {"type": "string", "enum": ["paid", "unpaid", "overdue"]}}
+        ]
+      }
+    },
+    "/invoices/{invoice_id}/refund": {
+      "post": {
+        "operationId": "refundInvoice",
+        "summary": "Refund an invoice",
+        "description": "Issue a full or partial refund of money for a paid invoice charge.",
+        "parameters": [{"name": "invoice_id", "in": "path", "required": true, "schema": {"type": "string"}}],
+        "requestBody": {"schema": {"type": "object", "required": ["amount", "reason"], "properties": {
+          "amount": {"type": "number", "minimum": 0.01, "maximum": 10000},
+          "reason": {"type": "string", "minLength": 3, "maxLength": 200}}}}
+      }
+    },
+    "/tickets": {
+      "post": {
+        "operationId": "createTicket",
+        "summary": "Open a support ticket",
+        "description": "Create a support ticket or issue for a customer with a title and priority.",
+        "requestBody": {"schema": {"type": "object", "required": ["customer_id", "title", "priority"], "properties": {
+          "customer_id": {"type": "string"},
+          "title": {"type": "string", "minLength": 5, "maxLength": 120},
+          "priority": {"type": "string", "enum": ["low", "medium", "high", "urgent"]}}}}
+      }
+    },
+    "/usage": {
+      "get": {
+        "operationId": "getUsage",
+        "summary": "Get API usage for a customer",
+        "description": "Return API request usage, seats used and storage for a customer this month.",
+        "parameters": [{"name": "customer_id", "in": "query", "required": true, "schema": {"type": "string"}}]
+      }
+    }
+  }
+}

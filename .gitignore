@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.index/
+*.db
+runs/
+06-permissioned-agent-sandbox/runs/
+.DS_Store

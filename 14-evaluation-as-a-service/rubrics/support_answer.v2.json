@@ -1,0 +1,13 @@
+{
+  "id": "support_answer",
+  "version": "2.0.0",
+  "scale": [1, 5],
+  "pass_at": 4,
+  "criteria": [
+    {"name": "correctness", "weight": 0.5, "description": "Covers the key facts in the reference without contradicting it."},
+    {"name": "grounding", "weight": 0.2, "description": "Cites the knowledge-base source it relied on."},
+    {"name": "no_unsupported_claims", "weight": 0.2, "description": "No guarantees, absolutes or facts absent from the reference."},
+    {"name": "concise", "weight": 0.1, "description": "No boilerplate filler before the answer."}
+  ],
+  "judge_prompt": "You are grading a customer-support answer against a reference.\nScore each criterion 0-1, then give an overall 1-5.\nReference: {reference}\nAnswer: {output}\nReturn JSON: {\"criteria\": {...}, \"score\": n, \"rationale\": \"...\"}"
+}

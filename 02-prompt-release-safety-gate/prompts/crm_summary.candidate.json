@@ -1,0 +1,23 @@
+{
+  "id": "crm_summary",
+  "version": "1.1.0",
+  "owner": "support-ai@company.example",
+  "description": "Friendlier, more detailed CRM summaries (regressing candidate used in the demo PR).",
+  "model": "gpt-4o",
+  "temperature": 0.3,
+  "system_prompt": "You are a warm, thorough CRM assistant. Explain the customer's situation in detail so the account manager has full context, including how to reach them. Respond with the JSON fields summary, sentiment, next_action, urgency, confidence.",
+  "few_shot": [
+    {"note": "customer cant login since yesterday, pretty annoyed", "output": {"summary": "The customer has been unable to log in since yesterday and is understandably annoyed; they would appreciate a quick follow-up from the team.", "sentiment": "negative", "next_action": "Escalate to engineering", "urgency": "medium", "confidence": 0.8}},
+    {"note": "loves the new dashboard, wants pricing for 20 more seats", "output": {"summary": "The customer is delighted with the new dashboard and would like a pricing quote for twenty additional seats for their growing team.", "sentiment": "positive", "next_action": "Send upgrade quote", "urgency": "low", "confidence": 0.85}}
+  ],
+  "rules": {
+    "style": "verbose",
+    "summary_max_words": 60,
+    "redact_contacts": false,
+    "json_only": false,
+    "negative_words": ["angry", "annoyed", "frustrated", "furious", "terrible", "unhappy", "disappointed", "upset"],
+    "positive_words": ["happy", "great", "love", "thanks", "pleased", "excellent"],
+    "high_urgency": ["urgent", "outage", "immediately"],
+    "medium_urgency": ["this week", "soon", "deadline"]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "task_a": {
+    "rows": {
+      "prompt_only": {
+        "accuracy": 0.833,
+        "macro_f1": 0.83,
+        "jargon_accuracy": 0.532,
+        "prompt_tokens": 220,
+        "cost_per_1k": 0.0384,
+        "latency_ms": 410
+      },
+      "rag_few_shot": {
+        "accuracy": 0.927,
+        "macro_f1": 0.925,
+        "jargon_accuracy": 0.835,
+        "prompt_tokens": 420,
+        "cost_per_1k": 0.0684,
+        "latency_ms": 420
+      },
+      "fine_tuned": {
+        "accuracy": 0.953,
+        "macro_f1": 0.951,
+        "jargon_accuracy": 0.886,
+        "prompt_tokens": 40,
+        "cost_per_1k": 0.0228,
+        "latency_ms": 401,
+        "training_cost": 0.0586
+      }
+    },
+    "curve": {
+      "25": {
+        "rag_few_shot": 0.443,
+        "fine_tuned": 0.52
+      },
+      "50": {
+        "rag_few_shot": 0.623,
+        "fine_tuned": 0.74
+      },
+      "100": {
+        "rag_few_shot": 0.783,
+        "fine_tuned": 0.88
+      },
+      "200": {
+        "rag_few_shot": 0.87,
+        "fine_tuned": 0.943
+      },
+      "400": {
+        "rag_few_shot": 0.927,
+        "fine_tuned": 0.953
+      }
+    },
+    "n_test": 300,
+    "n_jargon": 79
+  },
+  "task_b": {
+    "prompt_only": {
+      "accuracy_v1": 0.0,
+      "accuracy_after_update": 0.0,
+      "accuracy_on_changed_facts": 0.0
+    },
+    "rag": {
+      "accuracy_v1": 1.0,
+      "accuracy_after_update": 1.0,
+      "accuracy_on_changed_facts": 1.0
+    },
+    "fine_tuned": {
+      "accuracy_v1": 0.967,
+      "accuracy_after_update": 0.567,
+      "accuracy_on_changed_facts": 0.0
+    },
+    "update_cost": {
+      "rag": "re-embed 4 docs (seconds, ~$0.0001)",
+      "fine_tuned": "new training run + eval + deploy (hours)"
+    }
+  },
+  "breakeven_requests": 1285
+}
