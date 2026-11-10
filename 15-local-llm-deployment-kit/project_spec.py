@@ -68,6 +68,8 @@ SPEC = {
         ("Gateway", "llm_server.py", "OpenAI-compatible endpoints, SSE streaming, auth, 429 back-pressure, metrics, admin switch/rollback."),
         ("Benchmark", "benchmark.py", "Concurrency sweep per profile, recommendation, ops checks (bad model, memory, rollback, streaming, auth)."),
         ("Deployment", "deploy/", "Dockerfile, docker-compose (Ollama + gateway + Prometheus), prometheus.yml."),
+        ("GPU benchmark", "gpu/", "vLLM on a real GPU: BF16 vs FP8 vs AWQ-INT4 and prefix caching on/off; TTFT, inter-token latency, "
+                                  "tokens/s, KV-cache peak, cost per 1M tokens; runs on Modal or any Docker GPU VM."),
     ],
     "flow": [
         "Apps point the OpenAI SDK at the gateway's base URL with a local API key.",
@@ -85,13 +87,16 @@ SPEC = {
         ("Health check before switch", "A model that fails to load never takes traffic.", "Switch takes one extra generation."),
         ("Memory guard", "fp16 (16.1 GB) would OOM a 12 GB budget.", "Budget must be configured per host."),
         ("Simulator with compressed time", "Benchmark logic is testable in CI in seconds.", "Numbers are profile-driven, not measured, until run with --ollama."),
+        ("SLO-bounded capacity, not peak tok/s", "Peak throughput at 64 streams is meaningless if first token takes 5 s; the report counts users served within p95 TTFT <= 1 s.",
+         "Recommendation depends on the SLO you set in gpu/configs.json."),
     ],
     "evaluation": [
         "Recommendation for a 12 GB / 6 s p95 host: llama3.1-8b q8_0 (quality 0.84; p95 5.9 s at 8 concurrent, no 429s).",
         "q4_K_M: p95 2.8 s at 8 concurrent and ~104 tok/s; Qwen2.5-3B: 1.4 s and ~239 tok/s but quality 0.71.",
         "fp16 skipped by the memory guard; the broken model was refused by the health check with no downtime.",
         "At 16 concurrent, back-pressure returned 27-37 fast 429s instead of unbounded latency.",
-        "Rollback, SSE streaming, auth (401) and Prometheus output verified; 4 unit tests.",
+        "Rollback, SSE streaming, auth (401) and Prometheus output verified.",
+        "GPU benchmark client, vLLM metric sampling, launcher and report verified end to end against a fake vLLM server; 10 unit tests.",
     ],
     "run": [
         "python benchmark.py                       # simulator",
@@ -99,6 +104,7 @@ SPEC = {
         "python benchmark.py --ollama               # after: ollama pull llama3.1:8b-instruct-q4_K_M",
         "cd deploy && docker compose up --build",
         "python -m unittest discover -s tests",
+        "modal run gpu/modal_app.py                 # real vLLM on a cloud L4 GPU (see gpu/README.md)",
     ],
     "demo": ["python3", "benchmark.py"],
     "structure": [
@@ -107,6 +113,7 @@ SPEC = {
         ("llm_server.py", "OpenAI-compatible gateway"),
         ("benchmark.py", "Benchmark + ops checks"),
         ("deploy/", "Docker, compose, Prometheus"),
+        ("gpu/", "vLLM GPU benchmark: client, configs, Modal + VM runners, report"),
     ],
     "talking_points": [
         "Running a model is easy; running it as a service needs back-pressure, health checks, metrics and rollback.",
@@ -116,7 +123,7 @@ SPEC = {
         "Everything is observable in Prometheus, and docker-compose brings up Ollama, gateway and Prometheus together.",
     ],
     "production_next": [
-        "vLLM backend for continuous batching on GPUs; compare throughput with Ollama.",
+        "Route the gateway to the vLLM server benchmarked in gpu/ and compare against Ollama on the same GPU.",
         "Quality eval per quantization using the eval service (Project 14).",
         "Grafana dashboard JSON and alert rules (p95, 429 rate, inflight).",
         "Put the semantic cache (Project 12) and spend gateway (Project 3) in front for a full local AI platform.",

@@ -61,6 +61,7 @@ python llm_server.py --simulate --port 8815
 python benchmark.py --ollama               # after: ollama pull llama3.1:8b-instruct-q4_K_M
 cd deploy && docker compose up --build
 python -m unittest discover -s tests
+modal run gpu/modal_app.py                 # real vLLM on a cloud L4 GPU (see gpu/README.md)
 ```
 
 ## Sample output
@@ -68,38 +69,38 @@ python -m unittest discover -s tests
 Hardware: laptop-m2-16gb · memory budget 12 GB · SLO p95 6000 ms · backend SimulatedBackend (time x0.02)
 
 llama3.1-8b:q4_K_M   mem  4.9 GB · quality 0.81
-   c=1   p50   1406 ms  p95   1409 ms  ttft   180 ms    25.7 tok/s  429s 0
-   c=4   p50   1407 ms  p95   1459 ms  ttft   180 ms    93.1 tok/s  429s 0
-   c=8   p50   2627 ms  p95   2814 ms  ttft  1482 ms   101.4 tok/s  429s 0
-   c=16  p50   2408 ms  p95   4223 ms  ttft  1289 ms    98.6 tok/s  429s 33
+   c=1   p50   1324 ms  p95   1406 ms  ttft   180 ms    26.4 tok/s  429s 0
+   c=4   p50   1386 ms  p95   1437 ms  ttft   180 ms    98.7 tok/s  429s 0
+   c=8   p50   2430 ms  p95   2725 ms  ttft  1350 ms   110.2 tok/s  429s 0
+   c=16  p50   2602 ms  p95   3974 ms  ttft  1458 ms    76.6 tok/s  429s 35
 llama3.1-8b:q8_0     mem  8.5 GB · quality 0.84
-   c=1   p50   1969 ms  p95   2004 ms  ttft   260 ms    17.8 tok/s  429s 0
-   c=4   p50   1976 ms  p95   3773 ms  ttft   260 ms    53.5 tok/s  429s 0
-   c=8   p50   5714 ms  p95   5938 ms  ttft  3914 ms    54.3 tok/s  429s 0
-   c=16  p50   3968 ms  p95   7781 ms  ttft  2173 ms    48.2 tok/s  429s 37
+   c=1   p50   2054 ms  p95   2058 ms  ttft   260 ms    17.6 tok/s  429s 0
+   c=4   p50   2054 ms  p95   3956 ms  ttft   260 ms    53.2 tok/s  429s 0
+   c=8   p50   5968 ms  p95   6244 ms  ttft  4161 ms    54.3 tok/s  429s 0
+   c=16  p50   5490 ms  p95   7869 ms  ttft  3858 ms    47.7 tok/s  429s 35
 llama3.1-8b:fp16     SKIPPED: llama3.1-8b:fp16 needs 16.1 GB > budget 12 GB
 qwen2.5-3b:q4_K_M    mem  2.1 GB · quality 0.71
-   c=1   p50    757 ms  p95    758 ms  ttft    90 ms    44.4 tok/s  429s 0
-   c=4   p50    725 ms  p95    790 ms  ttft    90 ms   166.5 tok/s  429s 0
-   c=8   p50    784 ms  p95   1202 ms  ttft    90 ms   250.9 tok/s  429s 0
-   c=16  p50   1196 ms  p95   1402 ms  ttft   553 ms   254.1 tok/s  429s 0
+   c=1   p50    758 ms  p95    760 ms  ttft    90 ms    44.9 tok/s  429s 0
+   c=4   p50    756 ms  p95    758 ms  ttft    90 ms   181.4 tok/s  429s 0
+   c=8   p50    744 ms  p95   1279 ms  ttft    90 ms   171.9 tok/s  429s 0
+   c=16  p50   1453 ms  p95   2045 ms  ttft   792 ms   268.8 tok/s  429s 21
 
-Recommendation: llama3.1-8b:q8_0 (highest quality meeting p95 <= 6000 ms at 8 concurrent with no 429s)
+Recommendation: llama3.1-8b:q4_K_M (highest quality meeting p95 <= 6000 ms at 8 concurrent with no 429s)
 
 Ops checks:
-  switch to broken-model -> HTTP 409: health check failed, staying on llama3.1-8b:q8_0: model broken-model:q4 failed to load
+  switch to broken-model -> HTTP 409: health check failed, staying on llama3.1-8b:q4_K_M: model broken-model:q4 failed to load
   switch to fp16 -> HTTP 409: llama3.1-8b:fp16 needs 16.1 GB > budget 12 GB
-  switch to qwen2.5-3b -> HTTP 200: active model is now qwen2.5-3b:q4_K_M (previous llama3.1-8b:q8_0)
-  rollback -> HTTP 200: rolled back: active model is now llama3.1-8b:q8_0 (previous qwen2.5-3b:q4_K_M)
+  switch to qwen2.5-3b -> HTTP 200: active model is now qwen2.5-3b:q4_K_M (previous llama3.1-8b:q4_K_M)
+  rollback -> HTTP 200: rolled back: active model is now llama3.1-8b:q4_K_M (previous qwen2.5-3b:q4_K_M)
   streaming -> 8 SSE chunks + [DONE]=True
   wrong API key -> HTTP 401
   /metrics sample:
-    llm_requests_total{model="llama3.1-8b:q4_K_M",status="200"} 59
-    llm_requests_total{model="llama3.1-8b:q4_K_M",status="429"} 33
-    llm_requests_total{model="llama3.1-8b:q8_0",status="200"} 56
-    llm_requests_total{model="llama3.1-8b:q8_0",status="429"} 37
-    llm_requests_total{model="qwen2.5-3b:q4_K_M",status="200"} 92
-    llm_active_model_info{model="llama3.1-8b:q8_0"} 1
+    llm_requests_total{model="llama3.1-8b:q4_K_M",status="200"} 58
+    llm_requests_total{model="llama3.1-8b:q4_K_M",status="429"} 35
+    llm_requests_total{model="llama3.1-8b:q8_0",status="200"} 57
+    llm_requests_total{model="llama3.1-8b:q8_0",status="429"} 35
+    llm_requests_total{model="qwen2.5-3b:q4_K_M",status="200"} 71
+    llm_requests_total{model="qwen2.5-3b:q4_K_M",status="429"} 21
 
 Wrote reports/benchmark.json
 ```
@@ -112,6 +113,7 @@ Wrote reports/benchmark.json
 | llm_server.py | OpenAI-compatible gateway |
 | benchmark.py | Benchmark + ops checks |
 | deploy/ | Docker, compose, Prometheus |
+| gpu/ | vLLM GPU benchmark: client, configs, Modal + VM runners, report |
 
 ## Documentation
 - [docs/PROJECT_EXPLANATION.md](docs/PROJECT_EXPLANATION.md) · [docs/PROJECT_EXPLANATION.docx](docs/PROJECT_EXPLANATION.docx): full explanation

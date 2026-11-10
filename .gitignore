@@ -5,3 +5,4 @@ __pycache__/
 runs/
 06-permissioned-agent-sandbox/runs/
 .DS_Store
+reports/gpu/logs/

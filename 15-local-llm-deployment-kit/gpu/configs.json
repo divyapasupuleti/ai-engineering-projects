@@ -1,0 +1,64 @@
+{
+  "server": {
+    "port": 8000,
+    "common_args": ["--max-model-len", "8192", "--gpu-memory-utilization", "0.90"],
+    "docker_image": "vllm/vllm-openai:latest",
+    "ready_timeout_s": 1200
+  },
+  "slo": {
+    "ttft_p95_ms": 1000,
+    "itl_p50_ms": 50,
+    "note": "Interactive chat: first token within 1 s for 95% of users, and at least ~20 tokens/s per stream (faster than reading speed)."
+  },
+  "gpu_prices_usd_per_hour": {
+    "note": "Approximate on-demand list prices; check the provider's pricing page and pass --price to override.",
+    "L4": 0.80,
+    "A10G": 1.10,
+    "L40S": 1.95,
+    "A100-40GB": 2.10,
+    "A100-80GB": 2.50,
+    "H100": 3.95
+  },
+  "configs": [
+    {
+      "label": "qwen7b-bf16",
+      "group": "precision",
+      "description": "Baseline: full-precision BF16 weights",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "args": ["--dtype", "bfloat16"],
+      "bench_args": []
+    },
+    {
+      "label": "qwen7b-fp8",
+      "group": "precision",
+      "description": "FP8 weights and activations, quantised at load time (needs Ada/Hopper: L4, L40S, H100)",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "args": ["--quantization", "fp8"],
+      "bench_args": []
+    },
+    {
+      "label": "qwen7b-awq-int4",
+      "group": "precision",
+      "description": "4-bit AWQ weights served with Marlin kernels",
+      "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+      "args": [],
+      "bench_args": []
+    },
+    {
+      "label": "qwen7b-fp8-prefix-cache-on",
+      "group": "prefix-caching",
+      "description": "FP8 with automatic prefix caching (vLLM default) and a 1,500-word shared system prompt",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "args": ["--quantization", "fp8"],
+      "bench_args": ["--shared-prefix-words", "1500", "--input-words", "100", "--concurrency", "1,8,32"]
+    },
+    {
+      "label": "qwen7b-fp8-prefix-cache-off",
+      "group": "prefix-caching",
+      "description": "Same workload with prefix caching disabled",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "args": ["--quantization", "fp8", "--no-enable-prefix-caching"],
+      "bench_args": ["--shared-prefix-words", "1500", "--input-words", "100", "--concurrency", "1,8,32"]
+    }
+  ]
+}
